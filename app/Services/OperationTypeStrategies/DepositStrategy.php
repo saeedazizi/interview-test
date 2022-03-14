@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Strategies;
+namespace App\Services\OperationTypeStrategies;
 
 use App\DTO\OperationDto;
 
-final class DepositStrategy extends AbstractStrategy
+final class DepositStrategy extends AbstractOperationTypeStrategy
 {
     public function isEligible(OperationDto $dto): bool
     {

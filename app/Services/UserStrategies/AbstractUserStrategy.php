@@ -4,7 +4,7 @@ namespace App\Services\UserStrategies;
 
 use App\Services\HelperTrait;
 
-abstract class AbstractStrategy implements UserStrategyInterface
+abstract class AbstractUserStrategy implements UserStrategyInterface
 {
     use HelperTrait;
 

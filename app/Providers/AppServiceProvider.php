@@ -4,9 +4,9 @@ namespace App\Providers;
 
 use App\Services\CommissionService;
 use App\Services\CommissionServiceInterface;
-use App\Services\Strategies\CommissionStrategyInterface;
-use App\Services\Strategies\DepositStrategy;
-use App\Services\Strategies\WithdrawStrategy;
+use App\Services\OperationTypeStrategies\OperationTypeStrategyInterface;
+use App\Services\OperationTypeStrategies\DepositStrategy;
+use App\Services\OperationTypeStrategies\WithdrawStrategy;
 use App\Services\UserStrategies\BusinessUser;
 use App\Services\UserStrategies\PrivateUser;
 use App\Services\UserStrategies\UserStrategyInterface;
@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->tag([WithdrawStrategy::class, DepositStrategy::class], CommissionStrategyInterface::class);
+        $this->app->tag([WithdrawStrategy::class, DepositStrategy::class], OperationTypeStrategyInterface::class);
         $this->app->tag([BusinessUser::class, PrivateUser::class], UserStrategyInterface::class);
 
         $this->app->bind(
@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             CommissionServiceInterface::class,
             function ($app) {
-                return new CommissionService($app->tagged(CommissionStrategyInterface::class));
+                return new CommissionService($app->tagged(OperationTypeStrategyInterface::class));
             }
         );
     }

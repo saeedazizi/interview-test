@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\DTO\OperationDto;
 use App\Exceptions\OperationTypeException;
-use App\Services\Strategies\CommissionStrategyInterface;
+use App\Services\OperationTypeStrategies\OperationTypeStrategyInterface;
 
 final class CommissionService implements CommissionServiceInterface
 {
@@ -14,7 +14,7 @@ final class CommissionService implements CommissionServiceInterface
 
     public function calculate(OperationDto $dto): string
     {
-        /** @var CommissionStrategyInterface $strategy */
+        /** @var OperationTypeStrategyInterface $strategy */
         foreach ($this->strategies as $strategy) {
             if ($strategy->isEligible($dto)) {
                 return $strategy->supply($dto);

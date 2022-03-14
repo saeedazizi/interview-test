@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Services\Strategies;
+namespace App\Services\OperationTypeStrategies;
 
 use App\DTO\OperationDto;
 use App\Exceptions\ClientTypeException;
 use App\Services\UserStrategies\UserStrategyInterface;
 
-final class WithdrawStrategy extends AbstractStrategy
+final class WithdrawStrategy extends AbstractOperationTypeStrategy
 {
     public function __construct(private iterable $stages)
     {

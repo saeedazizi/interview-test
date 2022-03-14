@@ -4,7 +4,7 @@ namespace App\Services\UserStrategies;
 
 use App\DTO\OperationDto;
 
-class BusinessUser extends AbstractStrategy
+class BusinessUser extends AbstractUserStrategy
 {
     public function isEligible(OperationDto $dto): bool
     {

@@ -4,7 +4,7 @@ namespace App\Services\UserStrategies;
 
 use App\DTO\OperationDto;
 
-class PrivateUser extends AbstractStrategy
+class PrivateUser extends AbstractUserStrategy
 {
     private static array $currencyRates = [];
 

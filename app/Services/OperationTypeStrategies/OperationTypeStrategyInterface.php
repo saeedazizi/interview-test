@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Strategies;
+namespace App\Services\OperationTypeStrategies;
 
 use App\DTO\OperationDto;
 
-interface CommissionStrategyInterface
+interface OperationTypeStrategyInterface
 {
     public function isEligible(OperationDto $dto): bool;
 

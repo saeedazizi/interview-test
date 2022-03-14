@@ -23,8 +23,7 @@ RUN apt-get --allow-releaseinfo-change update  && apt-get install -yq --fix-miss
     git \
     curl \
     gnupg2 \
-    libssh-dev \
-    apt-utils
+    libssh-dev
 
 # Install extensions
 RUN docker-php-ext-install zip exif pcntl
