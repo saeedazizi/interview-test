@@ -1,3 +1,5 @@
+Note: This project is written with php 8.0
+
 If you are using docker, you can do following steps in the root of project:
 - ```docker build . --tag test```
 - ```docker run test:latest --name=test_app```
